@@ -41,7 +41,7 @@ p, a {
 @media (max-width:801px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 
 
-@media (max-width:600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+@media (max-width:600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 
 
   .know-more {
@@ -59,7 +59,7 @@ p, a {
 
     margin-bottom: 30px;
     padding-right: 10px;
-  } 
+  }
 
   .descr-box {
 

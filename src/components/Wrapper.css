@@ -1,8 +1,12 @@
 .wrapper-main {
-
     width: 100%;
     height: 100%;
     background-color: black;
     color: lime;
 }
- 
+
+.nav-menu {
+    column-gap: 25px;
+    display: flex;
+
+}

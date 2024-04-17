@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 
 const SingleLineTyper = (props) => {
-
-
     const [dasher, setDasher] = useState(<span ref={props.hiderRef} id="cursor">.</span>)
 
     const [displayString, setDisplayString] = useState('');
