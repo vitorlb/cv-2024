@@ -23,12 +23,12 @@
 }
 
 .education {
-	flex: 2;
+	flex: 3;
 }
 
 .skills {
 	display: flex;
-	flex: 1;
+	flex: 2;
 }
 
 .skills .skills__column {
@@ -48,6 +48,9 @@
 	display: flex;
 }
 
+h2.liner {
+	line-height: 1.5;
+}
 
 span.liner.laster:first-child #cursor {
 	display: none !important

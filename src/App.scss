@@ -1,35 +1,29 @@
-* {
+@import "bootstrap/scss/bootstrap.scss";
+@import "./globals.scss";
 
+* {
     font-family: 'Press Start 2P', cursive;
 }
 
 .module {
- 	
+
 }
 
-
-
 body {
-
   background-color: black;
   cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:lime; font-size:24px;'><g transform='rotate(-120, 10, 16)'><text y='50%'>➤</text></g></svg>") 0 0,auto; /*!emojicursor.app*/
 }
 
 .App {
-
-    min-height: 200vh;
     padding: 0 0 0 4vw;
-    width: 95%
-    
-} 
+    width: 100%
+}
 
 .wrapper-main {
-  width: 95%; 
   background-color: black;
   color: lime;
-  
-  line-height: 1.5; 
- } 
+  line-height: 1.5;
+ }
 
 .transparent {opacity: 0;}
 
@@ -48,7 +42,7 @@ a {
 }
 
 #cursor {
-    display: none; 
+    display: none;
     color: rgba(248, 174, 174, 0);
     width: 5px;
     background: lime;
@@ -59,7 +53,7 @@ a {
     width: 7px;
     height: 15px;
   }
- 
+
   * .liner:last-child #cursor {
 
     display: inline;
@@ -70,8 +64,8 @@ a {
     display: inline !important;
   }
 
-  
-/* 
+
+/*
   * .liner.laster.mid-text #cursor {
       display: none !important;
   } */
@@ -80,18 +74,17 @@ a {
 @media (max-width:1281px) { /* hi-res laptops and desktops */ }
 @media (max-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 @media (max-width:801px) { /* tablet, landscape iPad, lo-res laptops ands desktops */
- 
+
   .App {
 
       padding: 0;
       width: 100%;
     }
     .wrapper-main {
-      width: 90%; 
       background-color: black;
-      color: lime; 
+      color: lime;
      }
-  
+
 
   .wrapper-main > h2, nav {
 
@@ -101,7 +94,7 @@ a {
 }
 @media (max-width:600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 
-  
+
   nav {
 
     flex-direction: column;
@@ -120,14 +113,7 @@ a {
 
 }
 
-@media (max-width:480px) { /* smartphones, Android phones, landscape iPhone */ 
-
-  .wrapper-main {
-
-    width: 95%;
-  }
-
-
+@media (max-width:480px) { /* smartphones, Android phones, landscape iPhone */
 
   .wrapper-main > h2 {
 
@@ -136,8 +122,9 @@ a {
   }
   nav {
 
-    font-size: .8rem; 
+    font-size: .8rem;
   }
 }
 
 @media (max-width:320px) { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+

@@ -1,0 +1,57 @@
+@import "bootstrap/scss/bootstrap.scss";
+
+.wrapper-main {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	color: lime;
+}
+
+.nav-menu {
+	display: flex;
+
+	p {
+		@include media-breakpoint-down(md) {
+			font-size: 12px;
+		}
+	}
+}
+
+.header__animation-wrapper {
+	>div {
+		>div {
+			>div {
+				@include media-breakpoint-up(md) {
+					overflow: visible !important;
+				}
+
+				canvas {
+					@include media-breakpoint-up(md) {
+						height: 180px !important;
+						width: 180px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+.header__data {
+	.liner {
+		@include media-breakpoint-down(md) {
+			//TODO: consider left lignment
+			text-align: center;
+		}
+		&:not(:first-child) {
+			@include media-breakpoint-down(md) {
+				font-size: 18px;
+			}
+		}
+
+		&:nth-child(3) {
+			@include media-breakpoint-down(md) {
+				font-size: 15px;
+			}
+		}
+	}
+}

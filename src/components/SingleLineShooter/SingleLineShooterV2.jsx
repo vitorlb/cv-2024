@@ -36,7 +36,7 @@ if(myArray.length === props.verses.length ) {
 
                 if(i === props.verses.length - 1) {
                     if(hideDasher === true) {
-                        setTimeout(() => { if(hiderRef.current !== undefined || hiderRef.current !== null){hiderRef.current.style.visibility="hidden"} }, 2500);
+                        setTimeout(() => { if(hiderRef.current !== undefined && hiderRef.current !== null){hiderRef.current.style.visibility="hidden"} }, 2500);
 
                     }
                     if(props.launchComponentFunction !== undefined){

@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import SingleLinkShooterNoDescr from '../SingleLineShooter/SingleLinkShooterNoDescr';
 import './Contact.css'
-
-
 const Contact = () => {
 	return (
 		<>

@@ -2,15 +2,22 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import SingleLineShooterV2 from '../SingleLineShooter/SingleLineShooterV2';
 import SingleLineTyperNoContext from '../SingleLineTyper/SingleLineTyperNoContext';
 import { RouteDetectContext } from '../Wrapper';
+import { Context as SolidsContext } from '../../context/SolidsContext';
 
-import './about.css'
+import './about.scss'
 
 const About = (props) => {
+  const { state: solidsState, changeAnim } = useContext(SolidsContext);
 	const [slowInternet, setSlowInternet] = useState('')
 	const [paragraph2, setParagraph2] = useState('')
 	const [launch1, setLaunch1] = useState('')
 	const [launch2, setLaunch2] = useState('')
 	const delayTimer = "15s"
+
+	const showStatus = () => {
+		console.log('show')
+		console.log(solidsState)
+	}
 
 	const partoutStyle = {
 		position: "relative",
@@ -30,10 +37,9 @@ const About = (props) => {
 		WebkitAnimationFillMode: "forwards"
 	}
 
-
-	const toPop = useRef()
-	const toShow = useRef()
-	const toRender = useRef()
+	const toPop = useRef();
+	const toShow = useRef();
+	const toRender = useRef();
 
 	const slowInternetType = <>
 		<p>
@@ -44,7 +50,6 @@ const About = (props) => {
 	</>
 
 	const popItem = () => {
-
 		setTimeout(() => { setSlowInternet(slowInternetType) }, 3500);
 		setTimeout(() => { setSlowInternet('') }, 8000);
 		toPop.current.classList.add("popped");
