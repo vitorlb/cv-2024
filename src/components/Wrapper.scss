@@ -37,6 +37,7 @@
 }
 
 .header__data {
+	align-self:flex-start;
 	.liner {
 		@include media-breakpoint-down(md) {
 			//TODO: consider left lignment

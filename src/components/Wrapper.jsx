@@ -115,7 +115,7 @@ const Wrapper = (props) => {
 								timeToNext={800}
 								lineType={'h2'}
 								incrementTime={10}
-								verses={['Greetings.', 'My name is Vitor Branco,', 'I am currently looking for a job as Frontend Developer...']}
+								verses={['Greetings.', 'My name is Vitor Branco,', "I'm a Frontend Developer looking for a challange."]}
 							/>
 							{!!launchAbout && launchAbout}
 						</div>

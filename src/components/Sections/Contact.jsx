@@ -4,7 +4,7 @@ import './Contact.css'
 const Contact = () => {
 	return (
 		<>
-			<div className="mail">
+			<div className="mail text-center text-md-start">
 				<SingleLinkShooterNoDescr
 					timeBetweenVerses={[500, 2200]}
 					timeToLaunch={1}

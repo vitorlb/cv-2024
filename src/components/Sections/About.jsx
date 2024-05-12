@@ -7,12 +7,13 @@ import { Context as SolidsContext } from '../../context/SolidsContext';
 import './about.scss'
 
 const About = (props) => {
-  const { state: solidsState, changeAnim } = useContext(SolidsContext);
+	const emptyDiv = <div className="contact"></div>
+	const { state: solidsState, changeAnim } = useContext(SolidsContext);
 	const [slowInternet, setSlowInternet] = useState('')
 	const [paragraph2, setParagraph2] = useState('')
 	const [launch1, setLaunch1] = useState('')
-	const [launch2, setLaunch2] = useState('')
-	const delayTimer = "15s"
+	const [launch2, setLaunch2] = useState(emptyDiv)
+	const delayTimer = "2s"
 
 	const showStatus = () => {
 		console.log('show')
@@ -26,23 +27,23 @@ const About = (props) => {
 		justifyContent: "center",
 		alignItems: "center",
 		border: "1px solid lime",
-		width: "250px",
-		height: "250px",
+		width: "300px",
+		height: "300px",
 		animationTimingFunction: "ease-out",
 		animation: "popper 1s",
 		WebkitAnimation: "popper 1s",
 		animationDelay: delayTimer,
 		WebkitAnimationDelay: delayTimer,
 		animationFillMode: "forwards",
-		WebkitAnimationFillMode: "forwards"
+		WebkitAnimationFillMode: "forwards",
+		overflow: "hidden"
 	}
 
 	const toPop = useRef();
 	const toShow = useRef();
-	const toRender = useRef();
 
 	const slowInternetType = <>
-		<p>
+		<p className="slow">
 			<i>
 				<SingleLineTyperNoContext string={'Slow internet huh?'} timeInterval={30} />
 			</i>
@@ -51,17 +52,33 @@ const About = (props) => {
 
 	const popItem = () => {
 		setTimeout(() => { setSlowInternet(slowInternetType) }, 3500);
-		setTimeout(() => { setSlowInternet('') }, 8000);
-		toPop.current.classList.add("popped");
+		setTimeout(() => { setSlowInternet('') }, 7900);
+		setTimeout(() => { toPop.current.classList.add("popped") }, 8000);
 		toShow.current.classList.add("slow-slider");
 	}
 
-	const launch2Component = <div></div>
+	const launch2Component = <div className="contact">
+		<div onClick={popItem} style={partoutStyle} className="passpartout mb-3" >
+			<div className="avatar-container" ref={toShow}>
+				<img src="./avatar.png" alt="" />
+			</div>
+			<span>click here to see how I look like</span>
+		</div>
+		<div className="contact-info-wrapper pb-5">
+			<address ref={toPop}>
+				<p>Vitor Branco at 28yo of age</p>
+				<p>"Thinking about frontend development things..."</p>
+				<a href="mailto:vitorlinharesbranco@gmail.com">Mail me</a>
+				<p>vitorlinharesbranco<br />@gmail.com</p>
+			</address>
+		</div>
+	</div>
+
 	const launch1Component = <>
 		<div className='skills'>
 			<div className="skills__column">
 				<SingleLineShooterV2
-					timeBetweenVerses={[1000, 2100, 2200, 2300, 2400, 2500, 2600]}
+					timeBetweenVerses={[1000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900]}
 					timeToLaunch={1000}
 					/*
 					slotTarget={setLaunchNav}
@@ -71,26 +88,26 @@ const About = (props) => {
 					lineType={'p'}
 					incrementTime={10}
 					hideDasher={true}
-					verses={['SKILLED AT:', 'javaScript()', 'node.js', 'reactJs', 'reactNative', 'Vue3 js', 'html </>']}
+					verses={['SKILLED AT:', 'javaScript()', 'node.js', 'reactJs', 'reactNative', 'Vue3 js', 'html </>', 'CRUD', 'firebase']}
 				/>
 			</div>
 			<div className="skills__column">
-			<SingleLineShooterV2
-				timeBetweenVerses={[2700, 2800, 2900, 3000, 3100]}
-				timeToLaunch={1000}
-				/*
-				slotTarget={setLaunchNav}
-				componentToLaunch = {navComponent}
-				launchComponentFunction={launchComponent} */
-				timeToNext={0}
-				lineType={'p'}
-				incrementTime={10}
-				hideDasher={true}
-				verses={['css {}', 'php <?>', 'wordPress', 'drupal', 'shopify']}
-			/>
+				<SingleLineShooterV2
+					timeBetweenVerses={[2700, 2800, 2900, 3000, 3100, 3200, 3300, 3400]}
+					timeToLaunch={1000}
+					/*
+					slotTarget={setLaunchNav}
+					componentToLaunch = {navComponent}
+					launchComponentFunction={launchComponent} */
+					timeToNext={0}
+					lineType={'p'}
+					incrementTime={10}
+					hideDasher={true}
+					verses={['css {}', 'php <?>', 'ajax', 'wordPress', 'drupal', 'shopify', 'mailchimp API', 'threeJs']}
+				/>
 			</div>
 		</div>
-		<div className='education'>
+		<div className='education mt-4 mt-md-0'>
 			<SingleLineShooterV2
 				timeBetweenVerses={[1000, 2100, 2200, 2300, 2400, 2500]}
 				timeToLaunch={1000}
@@ -129,7 +146,7 @@ const About = (props) => {
 		<>
 			<div className="about-intro">
 				<div className="text-wrapper">
-					<p><SingleLineShooterV2
+					<p class="text-center text-md-start"><SingleLineShooterV2
 						timeBetweenVerses={[100, 600, 1000, 1800, 4400]}
 						timeToLaunch={2000}
 						slotTarget={setParagraph2}
@@ -139,31 +156,18 @@ const About = (props) => {
 						lineType={'span'}
 						incrementTime={10}
 						hideDasher={true}
-						verses={['All right!! ', 'So...', ' Hello again,', 'Vitor Branco, 28 years old, born in the northern town of Vila Real, Portugal. Currently living at Porto city.']} />
+						verses={['All right!! ', 'So...', ' Hello again,', 'Vitor Branco, 31 years old, born in the northern town of Vila Real, Portugal. Currently living at Porto city.']} />
 					</p>
-					<p>
+					<p class="text-center text-md-start">
 						{paragraph2}
 					</p>
-					<div class="about-list">
+					<div className="about-list">
 						{launch1}
-						{launch2}
 					</div>
 				</div>
-				<div className="contact">
-					<div onClick={popItem} style={partoutStyle} className="passpartout" >
-						<div class="avatar-container" ref={toShow}>
-						</div>
-						<span>click here to see how I look like</span>
-					</div>
-					<div className="contact-info-wrapper" ref={toRender}>
-						{slowInternet}
-						<address ref={toPop}>
-							<p>Vitor Branco at 28yo of age</p>
-							<p>"Thinking about frontend development things..."</p>
-							<a href="mailto:vitorlinharesbranco@gmail.com">Mail me</a>
-							<p>vitorlinharesbranco<br />@gmail.com</p>
-						</address>
-					</div>
+				<div className="d-flex flex-column">
+					{launch2}
+					{slowInternet}
 				</div>
 			</div>
 		</>

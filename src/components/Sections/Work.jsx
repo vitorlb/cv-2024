@@ -19,9 +19,9 @@ const Work = (props) => {
 							incrementTime={10}
 							hideDasher={true}
 							verses={['Front end developer at ALTA Digital.']}
-							linkHref={['https://altadigital.pt']}
+							linkHref={['https://altadigital.com']}
 							description={[
-								`ALTA Digital is a web, UX/UI and software agency. My daily challanges go trhough frontend development in different CMS types, such as Wordpress and Drupal. Developing apps using frameworks such as ReactJs, NextJs, React Native, Vue3, amongst others, as well as database comunication to feed the frameworks using REST API as resource for comunication between front and backend`
+								`At ALTA Digital, I collaborate closely with my team on website and app development, spanning various stages and environments. The diverse projects here allow me to explore different roles in frontend fields, gaining a comprehensive understanding of digital product development. During my tenure, I've mastered tools like ReactJs, NextJs, React Native, and Vue3, while also deepening my understanding of CMS environments like Wordpress and Drupal. Additionally, I have experience with REST APIs, facilitating seamless communication between frontend and backend systems.`
 							]}
 						/>
 					</div>
